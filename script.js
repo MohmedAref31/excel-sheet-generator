@@ -1,9 +1,12 @@
 let table = document.getElementsByClassName("sheet-body")[0],
 rows = document.getElementsByClassName("rows")[0],
 columns = document.getElementsByClassName("columns")[0]
-tableExists = false
+tableExists = false;
+
+
 
 const generateTable = () => {
+ 
     let rowsNumber = parseInt(rows.value), columnsNumber = parseInt(columns.value)
     table.innerHTML = ""
     for(let i=0; i<rowsNumber; i++){
@@ -15,11 +18,26 @@ const generateTable = () => {
     }
     if(rowsNumber>0 && columnsNumber>0){
         tableExists = true
+    }else{
+        /////////////////////////////////////////////////////
+        swal({
+            title: "Faild!",
+            text: "You must enter num of cols and rows!",
+            icon: "error",
+          });
+          //////////////////////////////////////////////
     }
 }
 
 const ExportToExcel = (type, fn, dl) => {
     if(!tableExists){
+        //////////////////////////////////////////////////
+        swal({
+            title: "Faild!",
+            text: "You must generate a table first!",
+            icon: "error",
+          });
+          ////////////////////////////////////////////////////
         return
     }
     var elt = table

@@ -25,11 +25,19 @@ body{
 .form > *{
     margin: 6px 0;
 }
+
+.form :is(input, button){
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
 .form input{
     width: 100%;
     padding: 8px 4px;
     font-size: 16px;
-    border: 2px solid #21212142;
+    border: 2px solid #56c448c3;
     background-color: #f7f7f7;
 }
 .form .btns{
